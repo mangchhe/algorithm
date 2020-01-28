@@ -1,0 +1,5 @@
+A, B, C = map(int, input().split())
+print('{}'.format((A+B)%C))
+print('{0}'.format((A%C + B%C)%C))
+print((A*B)%C)
+print('%d' % ((A%C * B%C)%C))
