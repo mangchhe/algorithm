@@ -1,0 +1,1 @@
+print('%d' % ord(input()))
