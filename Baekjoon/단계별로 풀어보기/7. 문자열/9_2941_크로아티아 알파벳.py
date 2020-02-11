@@ -19,3 +19,12 @@ while True:
 print(len(S))
 
 # 방법 2 (count)
+
+sum = 0
+
+for i in range(len(alpha)):
+    sum += S.count(alpha[i])
+    S = S.replace(alpha[i],'0')
+
+S = S.replace('0','')
+print(len(S) + sum)
