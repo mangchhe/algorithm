@@ -1,15 +1,23 @@
 N = int(input())
 
-count = 0
+pkg3 = 0
+pkg5 = 0
 
 while N != 0:
     if N >= 5:
         N -= 5
-        count += 1
+        pkg5 += 1
     elif N >= 3:
         N -= 3
-        count += 1
+        pkg3 += 1
     else:
-        N += 2
+        if pkg5 > 0:
+            N += 2
+            pkg3 += 1
+            pkg5 -= 1
+        else:
+            pkg3 = -1
+            pkg5 = 0
+            break
 
-print(count)
+print(pkg3 + pkg5)
