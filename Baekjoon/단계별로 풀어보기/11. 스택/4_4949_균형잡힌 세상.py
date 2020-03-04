@@ -48,7 +48,7 @@ for i in range(len(msg)):
             except IndexError:
                 flag = False
                 break
-    if flag:
+    if flag and len(stack) == 0:
         print('yes')
     else:
         print('no')
