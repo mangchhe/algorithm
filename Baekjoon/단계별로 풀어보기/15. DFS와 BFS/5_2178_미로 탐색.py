@@ -1,87 +1,39 @@
+from sys import stdin
 from collections import deque
 
-miro = []
-graph = {}
+x = [-1, 1, 0, 0]
+y = [0, 0, -1 ,1]
 
-def dfs(start_node):
+m, n = map(int, input().split())
 
-    global graph
-    visited = []
-    stack = deque([start_node])
+mapList = []
 
-    while stack:
+def bfs(node_x, node_y):
 
-        M, N = stack.popleft()
+    global mapList
 
-        if (M,N) not in visited:
-            visited.append((M,N))
-            stack.extendleft(graph[(M,N)][::-1])
+    visited = [[0 for i in range(n)] for j in range(m)]
+    visited[node_x][node_y] = 1
+    queue = deque([(node_x, node_y)])
 
-    return visited
+    while queue:
 
-def create_graph():
-    global miro
-    global graph
-    visited = [[0 for i in range(N)] for j in range(M)]
-    print(M,N)
-    for i in range(M):
-        for j in range(N):
-            if miro[i][j] == 1:
-                if i - 1 > -1 and visited[i - 1][j] == 0 and miro[i - 1][j] == 1:
-                    visited[i - 1][j] = 1
-                    if (i,j) not in graph:
-                        graph[(i,j)] = [(i-1,j)]
-                    else:
-                        if (i-1,j) not in graph[(i,j)]:
-                            graph[(i,j)].append((i-1,j))
-                    if (i-1,j) not in graph:
-                        graph[(i-1,j)] = [(i,j)]
-                    else:
-                        if (i,j) not in graph[(i-1,j)]:
-                            graph[(i-1,j)].append((i,j))
-                if i + 1 < M and visited[i + 1][j] == 0 and miro[i + 1][j] == 1:
-                    visited[i + 1][j] = 1
-                    if (i,j) not in graph:
-                        graph[(i,j)] = [(i+1,j)]
-                    else:
-                        if (i+1,j) not in graph[(i,j)]:
-                            graph[(i,j)].append((i+1,j))
-                    if (i+1,j) not in graph:
-                        graph[(i+1,j)] = [(i,j)]
-                    else:
-                        if (i,j) not in graph[(i+1,j)]:
-                            graph[(i+1,j)].append((i,j))
-                if j - 1 > - 1 and visited[i][j - 1] == 0 and miro[i][j - 1] == 1:
-                    visited[i][j - 1] = 1
-                    if (i,j) not in graph:
-                        graph[(i,j)] = [(i,j-1)]
-                    else:
-                        if (i,j-1) not in graph[(i,j)]:
-                            graph[(i,j)].append((i,j-1))
-                    if (i,j-1) not in graph:
-                        graph[(i,j-1)] = [(i,j)]
-                    else:
-                        if (i,j) not in graph[(i,j-1)]:
-                            graph[(i,j-1)].append((i,j))
-                if j + 1 < M and visited[i][j + 1] == 0 and miro[i][j + 1] == 1:
-                    visited[i][j + 1] = 1
-                    if (i,j) not in graph:
-                        graph[(i,j)] = [(i,j+1)]
-                    else:
-                        if (i,j+1) not in graph[(i,j)]:
-                            graph[(i,j)].append((i,j+1))
-                    if (i,j+1) not in graph:
-                        graph[(i+1,j)] = [(i,j)]
-                    else:
-                        if (i,j) not in graph[(i,j+1)]:
-                            graph[(i+1,j)].append((i,j))
+        node_x, node_y = queue.popleft()
+
+        for i in range(4):
+
+            if (node_x + x[i] > -1 and node_x + x[i] < m) and (node_y + y[i] > -1 and node_y + y[i] < n) and mapList[node_x + x[i]][node_y + y[i]] == 1 and visited[node_x + x[i]][node_y + y[i]] == 0:
+
+                mapList[node_x + x[i]][node_y + y[i]] = mapList[node_x][node_y] + 1
+
+                queue.append((node_x + x[i], node_y + y[i]))
+
+    return mapList[m - 1][n - 1]
 
 if __name__ == '__main__':
 
-    M, N = map(int, input().split())
+    for _ in range(m):
 
-    for _ in range(M):
-        miro.append(list(map(int, list(input()))))
+        mapList.append(list(map(int, stdin.readline().strip())))
 
-    create_graph()
-    print(dfs((0,0)))
+    print(bfs(0,0))
