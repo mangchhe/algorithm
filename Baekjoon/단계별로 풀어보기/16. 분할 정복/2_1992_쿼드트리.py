@@ -1,11 +1,13 @@
-from sys import stdin
+from sys import stdin, setrecursionlimit
 from collections import deque
+
+setrecursionlimit(1000000)
 
 N = 0
 box = []
 result = deque()
 
-def divide(y1, x1, y2, x2):
+def divide(x1, y1, x2, y2):
 
     initVal = box[x1][y1]
     doubleFor = False
@@ -24,18 +26,16 @@ def divide(y1, x1, y2, x2):
             break
 
     if initVal == 0:
-        print(x1,y1)
         result.append(0)
     elif initVal == 1:
-        print(x1,y1)
         result.append(1)
     elif initVal == 2:
+        result.append('(')
         divide(x1, y1, (x1 + x2) // 2, (y1 + y2) // 2)
-        divide((x1 + x2) // 2, y1, x2, (y1 + y2) // 2)
         divide(x1, (y1 + y2) // 2, (x1 + x2) // 2, y2)
+        divide((x1 + x2) // 2, y1, x2, (y1 + y2) // 2)
         divide((x1 + x2) // 2, (y1 + y2) // 2, x2, y2)
         result.append(')')
-        result.appendleft('(')
 
 
 if __name__ == '__main__':
@@ -48,4 +48,5 @@ if __name__ == '__main__':
 
     divide(0, 0, N, N)
 
-    print(result)
+    for val in result:
+        print(val, end='')
