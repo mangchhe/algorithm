@@ -9,31 +9,29 @@ zero = 0
 one = 0
 N = 0
 
-def divide(x1, y1, x2, y2):
-
-    global minus
-    global zero
-    global one
+def same(x1, y1, x2, y2):
 
     initVal = paper[x1][y1]
     doubleFor = False
 
     for i in range(x1, x2):
         for j in range(y1, y2):
-            if initVal == -1 and (paper[i][j] == 1 or paper[i][j] == 0):
-                initVal = 2
-                doubleFor = True
-                break
-            elif initVal == 0 and (paper[i][j] == 1 or paper[i][j] == -1):
-                initVal = 2
-                doubleFor = True
-                break
-            elif initVal == 1 and (paper[i][j] == 0 or paper[i][j] == -1):
+            if initVal != paper[i][j]:
                 initVal = 2
                 doubleFor = True
                 break
         if doubleFor:
             break
+    return initVal
+
+
+def divide(x1, y1, x2, y2):
+
+    global minus
+    global zero
+    global one
+
+    initVal = same(x1, y1, x2, y2)
 
     if initVal == -1:
         minus += 1
