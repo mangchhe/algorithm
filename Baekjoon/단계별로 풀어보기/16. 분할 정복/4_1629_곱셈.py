@@ -1,25 +1,17 @@
-A, B, C = map(int, input().split())
+from sys import stdin
 
-modVal = []
-val = []
+A, B, C = map(int, stdin.readline().split())
 
 def solve(N):
 
-    global result
-    tmp = N % C
-
-    if tmp in modVal:
-        pass
+    if N == 0:
+        return 1
     else:
-        modVal.append(tmp)
-        val.append(N)
-        solve(N*A)
+        tmp = solve(N//2)
 
-solve(A)
+        if N % 2 == 0:
+            return tmp * tmp
+        else:
+            return tmp * tmp * A
 
-if A < C:
-    if A < C and B < C:
-        del modVal[0]
-    print(modVal[(B % len(modVal)) - 1])
-else:
-    print(modVal[(B % len(modVal)) - 1])
+print(solve(B) % C)
