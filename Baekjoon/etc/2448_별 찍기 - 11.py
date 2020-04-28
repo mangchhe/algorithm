@@ -1,3 +1,5 @@
+'''
+
 N = int(input())
 
 box = [[' ' for j in range(N * 2)] for i in range(N)]
@@ -30,3 +32,28 @@ for i in box:
         print(j, end='')
 
     print('')
+
+'''
+
+block = ["  *  ", " * * ", "*****"]
+
+N = int(input())
+
+for i in range(11):
+
+    idx = 3 * 2 ** i
+
+    if idx > N:
+        break
+    elif idx == 3:
+        continue
+
+    length = len(block)
+
+    for j in range(length):
+        block.append(block[j] + " " + block[j])
+        block[j] = " " * (idx // 2) + block[j] + " " * (idx // 2)
+
+
+for val in block:
+    print(val)
