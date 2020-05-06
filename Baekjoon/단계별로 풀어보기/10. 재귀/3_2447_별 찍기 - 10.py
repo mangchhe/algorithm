@@ -4,25 +4,38 @@
 # 분할 정복 알고리즘(분할, 정복, 합치기)
 # 분할만 잘하면 정복은 하기가 쉽다.
 
-def stars(n):
-    matrix = []
-    for i in range(3 * len(n)):
-        if i // len(n) == 1:
-            matrix.append(n[i % len(n)] + " " * len(n) + n[i % len(n)])
+N = int(input())
+
+NList= ['***', '* *', '***']
+
+i = 9
+
+while True:
+
+    if N == 3 or i > N:
+
+        break
+
+    tmp = []
+
+    for j in range(i):
+
+        if j < i // 3:
+
+            tmp.append(NList[j] * 3)
+
+        elif j > i // 3 * 2 - 1:
+
+            tmp.append(NList[j - i // 3 * 2 ] * 3)
+
         else:
-            matrix.append(n[i % len(n)] * 3)
 
-    return (list(matrix))
+            tmp.append(NList[j - i // 3] + ' ' * (i // 3) + NList[j - i // 3])
 
+    NList = tmp
 
-star = ["***", "* *", "***"]
-n = int(input())
-k = 0
-while n != 3:
-    n = int(n / 3)
-    k += 1
+    i *= 3
 
-for i in range(k):
-    star = stars(star)
-for i in star:
+for i in NList:
+
     print(i)
