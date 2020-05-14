@@ -8,36 +8,40 @@ def solve(start_node):
 
     visited = [0] * 100001
     start_node = deque([start_node])
+    count = 0
 
-    while start_node:
+    while True:
 
-        current_node = start_node.popleft()
-        create(current_node)
+        tmp = []
 
-        if not visited[current_node]:
+        while start_node:
 
-            visited[current_node] = 1
-            start_node.extend(NList[current_node])
+            current_node = start_node.popleft()
 
             if current_node == K:
 
-                length = visited.count(1)
+                return count
 
-                for i in range(length):
+            if not visited[current_node]:
 
-                    if 3**i > length:
+                visited[current_node] = 1
+                create(current_node, tmp)
 
-                        return i
+        start_node.extend(tmp)
+        count += 1
 
 
-def create(N):
+def create(N, tmp):
 
     NList[N] = []
     if N - 1 >= 0:
+        tmp.append(N-1)
         NList[N].append(N - 1)
     if N + 1 < 100001:
+        tmp.append(N+1)
         NList[N].append(N + 1)
     if N * 2 < 100001:
+        tmp.append(N*2)
         NList[N].append(N * 2)
 
 print(solve(N))
