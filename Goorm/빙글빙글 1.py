@@ -6,23 +6,47 @@ xPos = yPos = 0
 
 num = 2
 
-for i in range(N, 0):
+for i in range(0, N):
 
-    for j in range(0, i):
+    if i == N - 1:
 
-        xPos += num * j
-
-        NList[xPos][yPos] = '#'
-
-    if i == 1:
         break
 
-    for k in range(0, i):
+    if i == 0:
 
-        yPos += num * k
+        for j in range(0, N - i - 1):
 
-        NList[xPos][yPos] = '#'
+            NList[xPos][yPos] = '#'
 
-    num *= -1
+            yPos += num
 
-print(NList)
+        for k in range(0, N - i - 1):
+            NList[xPos][yPos] = '#'
+
+            xPos += num
+
+        for l in range(0, N - i - 1):
+
+            NList[xPos][yPos] = '#'
+
+            yPos -= num
+
+    else:
+
+        for k in range(0, N - i * 2 - 1):
+            print(xPos)
+            NList[xPos][yPos] = '#'
+
+            xPos -= num
+
+        for j in range(0, N - i * 2 - 1):
+
+            NList[xPos][yPos] = '#'
+
+            yPos += num
+
+
+for i in NList:
+    for j in i:
+        print(j, end='')
+    print()
