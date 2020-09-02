@@ -1,31 +1,28 @@
 """ 
     작성일 : 20/09/01 - 진행중
+    수정일 : 20/09/02 - 완료
 """
 
 import collections
 from functools import reduce
 
-def solution(clothes):
+""" def solution(clothes):
 
     answer = list(collections.Counter(list(zip(*clothes))[1]).values())
+    print(answer)
     length = len(answer)
-    start = 0
-    end = 1
-    ori_end = 1
     result = 0
 
-    while end - start != length:
+    for i in range(length-1):
+        for j in range(i+1, length):
+            if abs(i-j) != 1:
+                result += reduce(lambda x, y : x * y, answer[i:j+1])
+            result += answer[i] * answer[j]
 
-        result += reduce(lambda x, y : x * y, answer[start:end+1])
+    return result + sum(answer) """
 
-        start += 1
-        end += 1
+def solution(clothes):
 
-        if length - 1 < end:
-            start = 0
-            ori_end += 1
-            end = ori_end
+    return reduce(lambda x, y: x * y, map(lambda x : x + 1, collections.Counter(list(zip(*clothes))[1]).values())) - 1
 
-    return result + sum(answer)
-
-print(solution([['yellow_hat', 'headgear'], ['blue_sunglasses', 'eyewear'], ['green_turban', 'headgear']]))
+print(solution([['yellow_hat', 'headgear'], ['blue_sunglasses', 'eyewear'], ['green_turban', 'headgear'], ['green_turba', 'headgear'], ['green_turasdn', 'headgea']]))
