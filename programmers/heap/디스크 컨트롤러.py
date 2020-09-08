@@ -1,10 +1,11 @@
 """ 
     작성일 : 20/09/07 - 진행중
+    수정일 : 20/09/08 - 진행중
 """
 
 import heapq
 
-def solution(jobs):
+""" def solution(jobs):
 
     jobs = list(map(lambda x: [x[1], x[0]], jobs))
 
@@ -33,6 +34,34 @@ def solution(jobs):
         if end == len(jobs) - 1:
             break
 
-    return result // len(jobs)
+    return result // len(jobs) """
 
-print(solution([[0, 3], [1, 9], [2, 6], [4, 3]]))
+def solution(jobs):
+
+    jobs = list(map(lambda x: [x[1], x[0]], jobs))
+    ori_length = len(jobs)
+    length = jobs[0][0]
+    result = length
+    del jobs[0]
+
+    while jobs:
+        tmp = []
+        for i in range(len(jobs)):
+            if length >= jobs[i][1]:
+                tmp.append(jobs[i])
+            else:
+                break
+        if tmp:
+            heapq.heapify(tmp)
+            tmp = heapq.heappop(tmp)
+            result += length - tmp[1] + tmp[0]
+            length += tmp[0]
+            del jobs[jobs.index(tmp)]
+        else:
+            length = jobs[0][0] + jobs[0][1]
+            result += jobs[0][0]
+            del jobs[0]
+
+    return result // ori_length
+
+print(solution([[0,3], [4,3], [10,3]]))
