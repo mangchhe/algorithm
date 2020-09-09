@@ -1,6 +1,8 @@
 """ 
     작성일 : 20/09/07 - 진행중
-    수정일 : 20/09/08 - 진행중
+    수정일 : 
+    20/09/08 - 진행중
+    20/09/09 - 완료
 """
 
 import heapq
@@ -38,10 +40,12 @@ import heapq
 
 def solution(jobs):
 
+    jobs.sort()
+
     jobs = list(map(lambda x: [x[1], x[0]], jobs))
     ori_length = len(jobs)
-    length = jobs[0][0]
-    result = length
+    length = jobs[0][1] + jobs[0][0]
+    result = jobs[0][0]
     del jobs[0]
 
     while jobs:
@@ -64,4 +68,4 @@ def solution(jobs):
 
     return result // ori_length
 
-print(solution([[0,3], [4,3], [10,3]]))
+print(solution([[0,3], [4,3], [10,3], [11,5], [15,4], [15,5]]))
