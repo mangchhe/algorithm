@@ -1,7 +1,7 @@
 """ 
     제목 : 계수 정렬 vs Counter 속도 비교
     작성일 : 20/10/05
-    결과 : 속도 : 계수정렬 < Counter
+    결과 : 계수정렬 < Counter
 """
 
 import random
