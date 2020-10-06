@@ -10,7 +10,9 @@ a = list(map(int, stdin.readline().rstrip().split()))
 b = list(map(int, stdin.readline().rstrip().split()))
 
 """ 
-? .reverse != sort(reverse=True) 
+? .reverse != sort(reverse=True)
+- reverse : 단순히 리스트를 뒤집는 것
+- sort(reverse=True) : 내림차순으로 정렬하는 것
 """
 a.sort(reverse=True)
 b.sort()
