@@ -2,27 +2,39 @@
     작성일 : 20/11/10
 """
 
-def solution(p):
-
-    left, right = 0, 0
+def correct_balance(s):
     count = 0
-    s = []
+    for i in s:
+        if i == '(':
+            count += 1
+        else:
+            count -= 1
+        
+        if count < 0:
+            length = len(s) // 2
+            return '(' * length + ')' * length
+
+    return s
+    
+def solution(p):
+    
+    b_s = ''
+    a_s = ''
+    left = 0
+    right = 0
 
     for i in p:
         if i == '(':
             left += 1
-            if left > right:
-                s.append('(')
-            elif left == right:
-                s.append('(' * count + ')' * count)
-                count = 0
+            a_s += '('
         else:
             right += 1
-            if left >= right:
-                s.append(')')
-            else:
-                count += 1
+            a_s += ')'
+        if left == right:
+            b_s += correct_balance(a_s)
+            a_s = ''
+            left, right = 0, 0
 
-    return ''.join(s)
+    return b_s
 
-print(solution(')('))
+print(solution('()))((()'))
