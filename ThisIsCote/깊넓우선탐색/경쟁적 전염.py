@@ -1,8 +1,14 @@
 """
     작성일 : 20/11/09 - 런타임 에러
+    수정일 : 20/11/18
+    
+    url : https://www.acmicpc.net/problem/18405
 """
 
 from collections import deque
+import sys
+
+input = sys.stdin.readline
 
 dx = [0, 0, -1, 1]
 dy = [1, -1, 0, 0]
@@ -22,27 +28,25 @@ for i in range(n):
             graphDic[graph[i][j]] = [(i, j)]
 
 for i in range(1, k + 1):
-    queue.extend(graphDic[i])
+    if i in graphDic:
+        queue.extend(graphDic[i])
 
-cnt = 0
-
-while True:
-    if cnt == s:
-        break
+for _ in range(s):
     nowVal = 0
     tmp = []
-    for i in queue:
+    while queue: # for i in queue -> 실수 queue의 값이 사라지지 않고 계속 쌓여서 시간 초과
+        i = queue.popleft()
         nowVal = graph[i[0]][i[1]]
         for j in range(4):
-            x = i[0] + dx[j]
-            y = i[1] + dy[j]
-            if x < n and x > -1 and y < n and y > -1:
-                if graph[x][y] == 0:
-                    graph[x][y] = nowVal
-                    tmp.append((x, y))
+            tx = i[0] + dx[j]
+            ty = i[1] + dy[j]
+            if tx < n and tx > -1 and ty < n and ty > -1:
+                if graph[tx][ty] == 0:
+                    graph[tx][ty] = nowVal
+                    tmp.append((tx, ty))
             else:
                 pass
-    cnt += 1
-    queue.extend(tmp)
 
+    queue.extend(tmp)
+        
 print(graph[x-1][y-1])
