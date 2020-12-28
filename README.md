@@ -55,3 +55,61 @@ System.out.println(stringBuilder.toString());
 String 객체를 이용하여 문자를 붙일 경우 새로운 객체를 생성하므로 효율이 좋지 못하다
 
 StringBuilder를 이용하여 append 메소드로 붙이는 것을 추천
+
+## 컬렉션 속도 비교
+
+### List
+
+#### ArrayList
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|add|O(1)|
+|remove|O(n)|
+|get|O(1)|
+|contains|O(n)|
+
+#### LinkedList
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|add|O(1)|
+|remove|O(1)|
+|get|O(n)|
+|contains|O(n)|
+
+### SET
+
+#### HashSet
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|add|O(1)|
+|contains|O(1)|
+|next|O(h / n)|
+
+#### LinkedHashSet
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|add|O(1)|
+|contains|O(1)|
+|next|O(1)|
+
+### Map
+
+#### HashMap
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|get|O(1)|
+|containsKey|O(1)|
+|next|O(h / n)|
+
+#### LinkedHashMap
+
+|메소드 이름|시간 복잡도|
+|:---|:---:|
+|get|O(1)|
+|containsKey|O(1)|
+|next|O(1)|
