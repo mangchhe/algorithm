@@ -1,5 +1,9 @@
 import sys
 
+'''
+수열, 증가수열, 등차수열 다른 개념
+'''
+
 # sys.stdin = open('input.txt', 'rt')
 
 n = int(input())
@@ -7,54 +11,30 @@ n = int(input())
 data = list(map(int, input().split()))
 
 s, e = 0, n - 1
-
-minVal = 0
-
-diff = 0
-
+before = 0
 res = ''
 
-while True:
+while s < e:
 
-    tmpArr = []
+    tmp = []
 
-    if minVal < data[s]:
-        tmpArr.append([data[s], 'L'])
-    if minVal < data[e]:
-        tmpArr.append([data[e], 'R'])
+    if before < data[s]:
+        tmp.append([data[s], 'L'])
+    if before < data[e]:
+        tmp.append([data[e], 'R'])
 
-    tmpArr.sort()
+    tmp.sort()
 
-    if not tmpArr:
+    if not tmp:
         break
-
-    if diff == 0:
-        res += tmpArr[0][1]
-
-        if minVal == 0:
-            minVal = tmpArr[0][0]
-            if tmpArr[0][1] == 'L':
-                s += 1
-            else:
-                e -= 1
-        else:
-            diff = tmpArr[0][0] - minVal
-            minVal = tmpArr[0][0]
-            if tmpArr[0][1] == 'L':
-                s += 1
-            else:
-                e -= 1
     else:
-        for d in tmpArr:
-            if d[0] - minVal == diff:
-                res += d[1]
-                minVal = d[0]
-                if d[1] == 'L':
-                    s += 1
-                else:
-                    e -= 1
-                break
-        else:
-            break
+        res += tmp[0][1]
+        before = tmp[0][0]
 
+        if tmp[0][1] == 'L':
+            s += 1
+        else:
+            e -= 1
+            
+print(len(res))
 print(res)
