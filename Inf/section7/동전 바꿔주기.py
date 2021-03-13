@@ -1,31 +1,31 @@
 import sys
 
-sys.stdin = open('input.txt', 'rt')
+# sys.stdin = open('input.txt', 'rt')
 
 def dfs(v, sum):
 
     global cnt
-    if v > n - 1:
-        return 
-    elif sum == t:
-        cnt += 1
-    else:
-        dfs(v + 1, sum + data[v])
-        dfs(v + 1, sum)
 
+    if sum == t:
+        cnt += 1
+    elif sum > t:
+        return
+    elif v > k - 1:
+        return
+    else:
+        for i in range(cdata[v] + 1):
+            dfs(v + 1, sum + ddata[v] * i)
 
 if __name__ == '__main__':
     
     t = int(input())
     k = int(input())
-    data = []
-    n = 0
+    ddata = []
+    cdata = []
     for i in range(k):
         a, b = map(int, input().split())
-        n += b
-        for i in range(b):
-            data.append(a)
-
+        ddata.append(a)
+        cdata.append(b)
     cnt = 0
 
     dfs(0, 0)
