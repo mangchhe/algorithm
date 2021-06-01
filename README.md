@@ -1,115 +1,76 @@
-# 알고리즘
+## 다익스트라(Dijkstra) 알고리즘
 
-백준, 코드업과 같은 다양한 사이트에 있는 알고리즘 문제를 통해 문제 해결 능력 키우기
+- 특정한 한 노드에서 다른 모든 노드까지 가는데 걸리는 최단 경로를 찾는 알고리즘이다.
+- O(ElogV) 라는 시간 복잡도를 가진다.
 
-## 입출력
+### 대표 소스
 
-### Python
+``` python
+import heapq
+from sys import stdin
 
-``` 
-import sys
+input = stdin.readline
 
-input = sys.stdin.readline
+N, M = map(int, input().split())
+distance = [float('INF')] * (N + 1)
+graph = [[] for _ in range(N + 1)]
+start = int(input())
 
-num = int(input())
-```
-문제 중 입력을 많이 받을 경우 input()으로 그대로 진행하면 시간 초과에 걸릴 것이다
-
-sys.stdin.readline 을 이용하여 문자를 받아서 사용하는 것으로 입출력의 시간을 줄이는 것이 좋다
-
-### Java
-
-```
-BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-int num = Integer.parseInt(bufferedReader.readLine());
-```
-
-입력이 많을 경우 Scanner 보다 BufferedReader 사용 추천
-
-## 문자열 다루기
-
-### Python
-
-```
-str = ''
-
-for i in range(10):
-    str += i
+def dijkstra(start):
     
-print(str)
+    q = []
+    distance[start] = 0
+    heapq.heappush(q, (0, start))
+
+    while q:
+        dist, now = heapq.heappop(q)
+        if dist > distance[now]:
+            continue
+        else:
+            for i in graph[now]:
+                cost = dist + i[1]
+                if distance[i[0]] > cost:
+                    distance[i[0]] = cost
+                    heapq.heappush(q, (cost, i[0]))
+
+if __name__ == '__main__':
+
+    for _ in range(M):
+        a, b, c = map(int, input().split())
+        graph[a].append((b, c))
+
+    dijkstra(start)
+
+    for i in range(1, N + 1):
+        print(distance[i])
 ```
 
-### Java
+## 플로이드 워셜(Floyd-Warshall) 알고리즘
 
+- 모든 노드에서 다른 모든 노드까지의 최단 경로를 모두 계산하는 알고리즘이다.
+- O(N^2) 라는 시간 복잡도를 가진다.
+
+### 대표 소스
+
+``` python
+N = int(input())
+M = int(input())
+graph = [[float('INF')] * (N + 1) for _ in range(N + 1)]
+
+for i in range(1, N + 1):
+    graph[i][i] = 0
+
+for _ in range(M):
+    a, b, c = map(int, input().split())
+    graph[a][b] = c
+
+for k in range(1, N + 1):
+    for i in range(1, N + 1):
+        for j in range(1, N + 1):
+            graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+
+for i in range(1, N + 1):
+    for j in range(1, N + 1):
+        print("%5s" % (graph[i][j]), end="")
+    print()
 ```
-StringBuilder stringBuilder = new StringBuilder();
-
-for (int i = 0; i < 10; i++) {
-    stringBuilder.append(i);
-}
-
-System.out.println(stringBuilder.toString());
-```
-
-String 객체를 이용하여 문자를 붙일 경우 새로운 객체를 생성하므로 효율이 좋지 못하다
-
-StringBuilder를 이용하여 append 메소드로 붙이는 것을 추천
-
-## 컬렉션 속도 비교
-
-### List
-
-#### ArrayList
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|add|O(1)|
-|remove|O(n)|
-|get|O(1)|
-|contains|O(n)|
-
-#### LinkedList
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|add|O(1)|
-|remove|O(1)|
-|get|O(n)|
-|contains|O(n)|
-
-### SET
-
-#### HashSet
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|add|O(1)|
-|contains|O(1)|
-|next|O(h / n)|
-
-#### LinkedHashSet
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|add|O(1)|
-|contains|O(1)|
-|next|O(1)|
-
-### Map
-
-#### HashMap
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|get|O(1)|
-|containsKey|O(1)|
-|next|O(h / n)|
-
-#### LinkedHashMap
-
-|메소드 이름|시간 복잡도|
-|:---|:---:|
-|get|O(1)|
-|containsKey|O(1)|
-|next|O(1)|
