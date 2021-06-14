@@ -11,7 +11,10 @@ def func(x, y, c):
         func(0, y + 1, c)
     elif paper[x][y] == 1:
         for k in range(5):
-            if x + k > 9 and y + k > 9:
+            if paperCnt[k] == 5:
+                continue
+
+            if x + k > 9 or y + k > 9:
                 continue
 
             flag = 0
@@ -28,8 +31,9 @@ def func(x, y, c):
                     for j in range(y, y + k + 1):
                         paper[i][j] = 0
 
+                paperCnt[k] += 1
                 func(x + k + 1, y, c + 1)
-
+                paperCnt[k] -= 1
                 for i in range(x, x + k + 1):
                     for j in range(y, y + k + 1):
                         paper[i][j] = 1
@@ -38,6 +42,7 @@ def func(x, y, c):
 
 
 paper = [list(map(int, input().split())) for _ in range(10)]
+paperCnt = [0 for _ in range(5)]
 ans = float("INF")
 
 func(0, 0, 0)
