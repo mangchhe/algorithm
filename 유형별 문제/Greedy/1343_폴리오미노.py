@@ -4,7 +4,8 @@ poli = input().rstrip()
 i = 0
 
 while True:
-    if i > len(poli):
+
+    if i >= len(poli):
         break
 
     if poli[i : i + 4] == "XXXX":
