@@ -16,3 +16,6 @@
 |  11   |   14425   |        [문자열 집합](https://www.acmicpc.net/problem/14425)         | [바로가기](../14425) |
 |  12   |   11279   |          [최대 힙](https://www.acmicpc.net/problem/11279)           | [바로가기](../11279) |
 |  13   |   11286   |         [절대값 힙](https://www.acmicpc.net/problem/11286)          | [바로가기](../11286) |
+|  14   |   2075    |         [N번째 큰 수](https://www.acmicpc.net/problem/2075)         | [바로가기](../2075)  |
+|  15   |   4358    |           [생태학](https://www.acmicpc.net/problem/4358)            | [바로가기](../4358)  |
+|  16   |   7662    |      [이중 우선순위 큐](https://www.acmicpc.net/problem/7662)       | [바로가기](../7662)  |
