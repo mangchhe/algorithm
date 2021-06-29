@@ -19,3 +19,6 @@
 |  14   |   2075    |         [N번째 큰 수](https://www.acmicpc.net/problem/2075)         | [바로가기](../2075)  |
 |  15   |   4358    |           [생태학](https://www.acmicpc.net/problem/4358)            | [바로가기](../4358)  |
 |  16   |   7662    |      [이중 우선순위 큐](https://www.acmicpc.net/problem/7662)       | [바로가기](../7662)  |
+|  17   |   2696    |        [중앙값 구하기](https://www.acmicpc.net/problem/2696)        | [바로가기](../2696)  |
+|  18   |   21939   | [문제 추천 시스템 Version 1](https://www.acmicpc.net/problem/21939) | [바로가기](../21939) |
+|  19   |   21942   |        [부품 대여장](https://www.acmicpc.net/problem/21942)         | [바로가기](../21942) |
