@@ -5,3 +5,6 @@
 |  00   |   15591   |  [MooTube(Silver)](https://www.acmicpc.net/problem/15591)  | [바로가기](../15591) |
 |  01   |   21940   | [가운데에서 만나기](https://www.acmicpc.net/problem/21940) | [바로가기](../21940) |
 |  02   |   11725   | [트리의 부모 찾기](https://www.acmicpc.net/problem/11725)  | [바로가기](../11725) |
+|  03   |   1991    |     [트리 순회](https://www.acmicpc.net/problem/1991)      | [바로가기](../1991)  |
+|  04   |   5639    |   [이진 검색 트리](https://www.acmicpc.net/problem/5639)   | [바로가기](../5639)  |
+|  05   |   9934    |   [완전 이진 트리](https://www.acmicpc.net/problem/9934)   | [바로가기](../9934)  |
