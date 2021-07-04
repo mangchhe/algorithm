@@ -10,3 +10,5 @@
 |  05   |   9934    |   [완전 이진 트리](https://www.acmicpc.net/problem/9934)   | [바로가기](../9934)  |
 |  06   |   1068    |        [트리](https://www.acmicpc.net/problem/1068)        | [바로가기](../1068)  |
 |  07   |   6416    |     [트리인가?](https://www.acmicpc.net/problem/6416)      | [바로가기](../6416)  |
+|  08   |   14675   |  [단절점과 단절선](https://www.acmicpc.net/problem/14675)  | [바로가기](../14675) |
+|  09   |   17073   |  [나무 위의 빗물](https://www.acmicpc.net/problem/17073)   | [바로가기](../17073) |
