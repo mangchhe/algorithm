@@ -15,3 +15,5 @@
 |  10   |   1967    |      [트리의 지름](https://www.acmicpc.net/problem/1967)      | [바로가기](../1967)  |    Python    |
 |  11   |   3584    | [가장 가까운 공통 조상](https://www.acmicpc.net/problem/3584) | [바로가기](../3584)  |    Python    |
 |  12   |   4256    |         [트리](https://www.acmicpc.net/problem/3584)          | [바로가기](../4256)  | Python, Java |
+|  13   |   9489    |         [사촌](https://www.acmicpc.net/problem/9489)          | [바로가기](../9489)  |    Python    |
+|  14   |   20924   |  [트리의 기둥과 가지](https://www.acmicpc.net/problem/20924)  | [바로가기](../20924) |    Python    |
