@@ -10,3 +10,7 @@
 |  05   |   1758    |  [알바생 강호](https://www.acmicpc.net/problem/1758)   | [바로가기](../1758)  |    Python    |
 |  06   |   2217    |      [로프](https://www.acmicpc.net/problem/2217)      | [바로가기](../2217)  |    Python    |
 |  07   |   20300   |  [서강근육맨](https://www.acmicpc.net/problem/20300)   | [바로가기](../20300) | Python, Java |
+|  08   |   11399   |      [ATM](https://www.acmicpc.net/problem/11399)      | [바로가기](../11399) |    Python    |
+|  09   |   11508   |   [2+1 세일](https://www.acmicpc.net/problem/11508)    | [바로가기](../11508) |    Python    |
+|  10   |   20115   | [에너지 드링크](https://www.acmicpc.net/problem/20115) | [바로가기](../20115) |    Python    |
+|  11   |   20365   |    [블로그2](https://www.acmicpc.net/problem/20365)    | [바로가기](../20365) |    Python    |
