@@ -14,3 +14,5 @@
 |  09   |   11508   |   [2+1 세일](https://www.acmicpc.net/problem/11508)    | [바로가기](../11508) |    Python    |
 |  10   |   20115   | [에너지 드링크](https://www.acmicpc.net/problem/20115) | [바로가기](../20115) |    Python    |
 |  11   |   20365   |    [블로그2](https://www.acmicpc.net/problem/20365)    | [바로가기](../20365) |    Python    |
+|  12   |   11047   |    [동전 0](https://www.acmicpc.net/problem/11047)     | [바로가기](../11047) |    Python    |
+|  13   |   16953   |     [A → B](https://www.acmicpc.net/problem/16953)     | [바로가기](../16953) |    Python    |
