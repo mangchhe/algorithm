@@ -5,3 +5,4 @@
 |  00   |   14567   | [선수과목](https://www.acmicpc.net/problem/14567) | [바로가기](../14567) | Python |
 |  01   |   1005    | [ACM Craft](https://www.acmicpc.net/problem/1005) | [바로가기](../1005)  | Python |
 |  02   |   2252    | [줄 세우기](https://www.acmicpc.net/problem/2252) | [바로가기](../2252)  | Python |
+|  03   |   1766    |  [문제집](https://www.acmicpc.net/problem/1766)   | [바로가기](../1766)  | Python |
