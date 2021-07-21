@@ -11,3 +11,4 @@
 |  06   |   2224    |        [명제 증명](https://www.acmicpc.net/problem/2224)         | [바로가기](../2224)  | Python |
 |  07   |   1753    |         [최단경로](https://www.acmicpc.net/problem/1753)         | [바로가기](../1753)  | Python |
 |  08   |   13549   |       [숨바꼭질 3](https://www.acmicpc.net/problem/13549)        | [바로가기](../13549) | Python |
+|  09   |   14938   |      [서강그라운드](https://www.acmicpc.net/problem/14938)       | [바로가기](../14938) | Python |
