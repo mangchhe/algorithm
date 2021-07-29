@@ -16,5 +16,6 @@
 |  11   |   20365   |     [블로그2](https://www.acmicpc.net/problem/20365)      | [바로가기](../20365) |    Python    |
 |  12   |   11047   |      [동전 0](https://www.acmicpc.net/problem/11047)      | [바로가기](../11047) |    Python    |
 |  13   |   16953   |      [A → B](https://www.acmicpc.net/problem/16953)       | [바로가기](../16953) |    Python    |
-|  14   |   19598   | [최소 회의실 개수](https://www.acmicpc.net/problem/16953) | [바로가기](../19598) |    Python    |
-|  15   |   21314   |     [민겸 수](https://www.acmicpc.net/problem/16953)      | [바로가기](../21314) | Python, Java |
+|  14   |   19598   | [최소 회의실 개수](https://www.acmicpc.net/problem/19598) | [바로가기](../19598) |    Python    |
+|  15   |   21314   |     [민겸 수](https://www.acmicpc.net/problem/21314)      | [바로가기](../21314) | Python, Java |
+|  16   |   11000   |   [강의실 배정](https://www.acmicpc.net/problem/11000)    | [바로가기](../11000) |    Python    |
