@@ -19,3 +19,5 @@
 |  14   |   19598   | [최소 회의실 개수](https://www.acmicpc.net/problem/19598) | [바로가기](../19598) |    Python    |
 |  15   |   21314   |     [민겸 수](https://www.acmicpc.net/problem/21314)      | [바로가기](../21314) | Python, Java |
 |  16   |   11000   |   [강의실 배정](https://www.acmicpc.net/problem/11000)    | [바로가기](../11000) |    Python    |
+|  17   |   1092    |        [배](https://www.acmicpc.net/problem/1092)         | [바로가기](../1092)  |    Python    |
+|  18   |   13975   |  [파일 합치기 3](https://www.acmicpc.net/problem/13975)   | [바로가기](../13975) |    Python    |
