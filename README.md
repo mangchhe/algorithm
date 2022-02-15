@@ -11,12 +11,13 @@
 | 06 | 최소 신장 트리 | Minimum Spanning Tree(MST) | [바로가기][mst-structure] | [![바로가기](./images/clipboard.jpg)][mst-summary] |
 | 07 | 최단 경로 |Shortest Path | [바로가기][shortest-path-structure] | [![바로가기](./images/clipboard.jpg)][shortest-path-summary] |
 | 08 | 분할 정복 | Divide and conquer | [바로가기][divide-and-conquer-structure] | - |
-| 09 | 트리 | Tree | [바로가기][tree-structure] | [![바로가기](./images/clipboard.jpg)][tree-summary] |
+| 09 | 트리 | Tree | [바로가기][tree-structure] | - |
 | 10 | 누적합 | Prefix Sum | [바로가기][prefix-sum-structure] | - |
 | 11 | 수학 | Math | [바로가기][math-structure] | - |
 | 12 | 정렬 | Sort | [바로가기][sort-structure] | [![바로가기](./images/clipboard.jpg)][sort-summary] |
 | 13 | 평방 분할 | Square Root Decomposition | [바로가기][square-root-decomposition-structure] | [![바로가기](./images/clipboard.jpg)][square-root-decomposition-summary] |
 | 14 | 모스 | Mos | [바로가기][mos-structure] | [![바로가기](./images/clipboard.jpg)][mos-summary] |
+| 15 | 이분 매칭 | Bipartite Matching | [바로가기][bipartite-matching-structure] | - |
 
 [data-structure-structure]: ./유형별%20문제/Data%20Structure/structure
 [data-structure-summary]: ./유형별%20문제/Data%20Structure/summary
@@ -62,3 +63,6 @@
 
 [mos-structure]: ./유형별%20문제/Mos/structure
 [mos-summary]: https://mangchhe.github.io/algorithm/2021/12/28/mosAlgorithm/
+
+[bipartite-matching-structure]: ./유형별%20문제/Bipartite%20Matching/structure
+[bipartite-matching-summary]: ./유형별%20문제/Bipartite%20Matching/summary
