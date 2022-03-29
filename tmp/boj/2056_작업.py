@@ -38,11 +38,15 @@ from collections import deque
 input = __import__('sys').stdin.readline
 
 N = int(input())
-dp = [0] * (N + 1)
+ans = 0
+times = [0] * (N + 1)
 
 for i in range(1, N + 1):
-    dp[i], *indegree = map(int, input().split())
-    if indegree[0] > 0: 
-        dp[i] += max(dp[d] for d in indegree[1:])
+    time, *indegree = map(int, input().split())
+    times[i] = time
+    if len(indegree) > 1:
+        times[i] = time + max(map(lambda x: times[x], indegree[1:]))
 
-print(max(dp))
+    ans = max(ans, times[i])
+
+print(ans)
