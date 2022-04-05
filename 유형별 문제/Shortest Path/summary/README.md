@@ -74,3 +74,38 @@ for i in range(1, N + 1):
         print("%5s" % (graph[i][j]), end="")
     print()
 ```
+
+## 벨만 포드(Bellman-Ford) 알고리즘
+
+- 그래프에서 한 정점에서 다른 모든 정점으로 가는 최단 경로를 구하는 알고리즘입니다.
+- 다익스트라보다는 느리지만 음의 간선이 존재해도 최단 경로를 찾을 수 있다는 특징이 있습니다.
+- O(VE) 라는 시간 복잡도를 가진다.
+
+```java
+def bellman_ford(start):
+    distance[start] = 0
+
+    for i in range(N):
+        for j in range(M):
+            cur_node = graph[j][0]
+            next_node = graph[j][1]
+            cost = graph[j][2]
+
+            if distance[cur_node] != float('INF') and distance[cur_node] + cost < distance[next_node]:
+                distance[next_node] = distance[cur_node] + cost
+
+                if i == N - 1:
+                    return 0
+
+    return 1
+
+N, M = map(int, input().split())
+graph = []
+distance = [float('INF')] * (N + 1)
+
+for i in range(M):
+    a, b, c = map(int, input().split())
+    graph.append((a, b, c))
+
+bellman_ford(1)
+```
