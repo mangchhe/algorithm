@@ -1,3 +1,8 @@
+# 아침 스터디
+
+- 매일 아침 7시
+- [형상 관리][morning-study]
+
 ## 유형별 문제
 
 | 번호 | Name | Tag | 문제집 | 내용 정리 |
@@ -18,6 +23,8 @@
 | 13 | 평방 분할 | Square Root Decomposition | [바로가기][square-root-decomposition-structure] | [![바로가기](./images/clipboard.jpg)][square-root-decomposition-summary] |
 | 14 | 모스 | Mos | [바로가기][mos-structure] | [![바로가기](./images/clipboard.jpg)][mos-summary] |
 | 15 | 이분 매칭 | Bipartite Matching | [바로가기][bipartite-matching-structure] | - |
+
+[morning-study]: https://docs.google.com/spreadsheets/d/1exa3AIr0AOPMyZqBVM5YGqF2V2rqO2abFTgVl-sq_nA/edit?usp=sharing
 
 [data-structure-structure]: ./유형별%20문제/Data%20Structure/structure
 [data-structure-summary]: ./유형별%20문제/Data%20Structure/summary
