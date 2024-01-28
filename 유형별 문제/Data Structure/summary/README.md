@@ -20,7 +20,7 @@ char[] charArray = strLiteral.toCharArray();
 charArray[3] = 'W';
 String strLiteral2 = new String(charArray);
 
-// 3
+// 3≤
 String strLiteral3 = strLiteral.substring(0, 4) + "w" + strLiteral.substring(5, 7);
 
 // 4
@@ -64,3 +64,45 @@ String strObject2 = new String("Hello World!");
 | split(String regex)            |          |                                   |
 | substring                      |          |                                   |
 | indexOf(int ch, int fromIndex) | O(N * M) |                                   |
+
+## char(primitive)
+
+- 문자와 숫자를 넣을 수 있다.
+- 기본적으로 출력 시에 문자를 출력한다.
+
+```java
+char x = 65;
+System.out.println(x); // A
+System.out.println((int)x); // 65
+System.out.println((char)65); // A
+System.out.println(x + 25); // 90
+System.out.println((char)(x + 25)); // Z
+System.out.println('Z' - 'A'); // 25
+```
+
+- **ASCII CODE**
+- 0 ~ 9 : 48 ~ 57 (9)
+- A ~ Z : 65 ~ 90 (25)
+- a ~ z : 97 ~ 122 (25)
+- 대소문자 차이는 32라고 기억하는 것이 좋다.
+
+## Array
+
+- 순서를 가지는 데이터의 집합
+- 가장 기본적인 자료구조
+- 생성과 동시에 크기가 고정
+- 전체 원소가 메모리상에 일렬도 저장
+
+```java
+int[] arr = new int[5];
+int[] arr2 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+System.out.println(arr2.length);
+```
+
+| action | Big-O |
+|--------|-------|
+| get    | O(1)  |
+| change | O(1)  |
+| append | O(1)  |
+| insert | O(N)  |
+| erase  | O(N)  |
