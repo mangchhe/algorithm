@@ -106,3 +106,26 @@ System.out.println(arr2.length);
 | append | O(1)  |
 | insert | O(N)  |
 | erase  | O(N)  |
+
+## IO
+
+- Scanner 의 입출력 속도는 상당히 느리다.
+- BufferedReader, BufferedWriter 를 대신 사용하면 빠르게 처리 가능하다.
+
+```java
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+br.readLine()
+bw.write()
+bw.flush()
+```
+
+## 공간 복잡도 (Space Complexity)
+
+- 4byte * 10,000 = 4,0000byte = 40kb
+- 4,000,000,000byte = 4,000,000kb = 4,000mb
+
+```java
+int[] arr = new int[10001];
+```
